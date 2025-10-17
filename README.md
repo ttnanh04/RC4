@@ -25,9 +25,17 @@ Vì RC4 là đối xứng, nên: Mã hóa và giải mã dùng cùng một hàm 
 Yêu cầu: Đã cài GCC (MinGW nếu trên Windows).
 Có sẵn terminal (cmd hoặc PowerShell).
 
-"Mã hóa" Vào thư mục: cd rc4_encrypt Biên dịch: gcc main.c rc4_encrypt.c -o encrypt.exe Chạy: encrypt.exe
+"Mã hóa" Vào thư mục: cd rc4_encrypt
 
-"Giải mã" Vào thư mục: cd rc4_decrypt Biên dịch: gcc main.c rc4_decrypt.c -o decrypt.exe Chạy: decrypt.exe
+Biên dịch: gcc main.c rc4_encrypt.c -o encrypt.exe
+
+Chạy: encrypt.exe
+
+"Giải mã" Vào thư mục: cd rc4_decrypt 
+
+Biên dịch: gcc main.c rc4_decrypt.c -o decrypt.exe 
+
+Chạy: decrypt.exe
 
 4. Cấu hình khóa
 
