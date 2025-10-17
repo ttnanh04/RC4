@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdint.h>
+#include <string.h>
+#include "rc4_decrypt.h"
+
+int main() {
+    uint8_t S[256];
+    const char *KEY = "HUST2025";
+    const size_t KEY_LEN = strlen(KEY);
+
+    // Chuỗi đã mã hóa (ví dụ lấy output từ encrypt)
+    uint8_t data[] = { 0xBA, 0x0F, 0xCE, 0xAF, 0xE5, 0xE8, 0x85, 0xC2, 0x12, 0x27, 0x31, 0x3A, 0x9A, 0xB1, 0xF2, 0x27, 0xF6, 0x75, 0x3C, 0xDF, 0x66, 0x96, 0xD4, 0xED, 0xB4, 0x8F, 0x5E, 0x59, 0x5F, 0xC0, 0x04, 0x6E, 0x9A, 0xDA, 0xE7, 0x5A, 0xAE, 0xD0, 0x65, 0xA8, 0xDB, 0xA6 }; // ví dụ minh họa
+
+    printf("Dữ liệu trước giải mã (hex): ");
+    for (size_t i = 0; i < sizeof(data); i++) printf("%02X ", data[i]);
+    printf("\n");
+
+    rc4_init(S, (uint8_t*)KEY, KEY_LEN);
+    rc4_generate(S, data, sizeof(data));
+
+    printf("Sau khi giải mã: %s\n", data);
+    return 0;
+}
