@@ -10,7 +10,7 @@ RC4 Decryption: đọc file mã hóa (cipher.bin) và giải mã lại về plai
 
 RC4 là thuật toán mã hóa dòng (stream cipher) hoạt động bằng cách tạo ra một keystream được XOR với dữ liệu gốc.
 
-3. Nguyên lý hoạt động RC4 gồm 2 giai đoạn:
+2. Nguyên lý hoạt động RC4 gồm 2 giai đoạn:
 
 Giai đoạn 1: Khởi tạo (rc4_init), Tạo mảng hoán vị S[256] từ 0 đến 255. Trộn S dựa trên khóa bí mật (KEY).
 
@@ -35,7 +35,7 @@ Trong cả rc4_encrypt.h và rc4_decrypt.h đều có khai báo: #define KEY "HU
 
 -> Nếu muốn đổi khóa, chỉ cần thay chuỗi trong KEY ở cả hai file header.
 
-5.Bộ test vecto KEY: HUST2025
+5. Bộ test vecto KEY: HUST2025
 
 Mã hóa: Plaintext: Hanoi University of Science and Technology
 
